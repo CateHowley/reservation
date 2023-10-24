@@ -1,4 +1,7 @@
 public class ReservationSystem {
+
+    Reservation[] reservations = new Reservation[10];
+
     public static void main(String[] args) {
         ReservationSystem jarvis = new ReservationSystem();
     }
@@ -7,7 +10,7 @@ public class ReservationSystem {
     public ReservationSystem() {
         //  Reservation gavin = new Reservation( 1, 4.00, 2, "jessie", 645);
         //  gavin.toString();
-
+        selectionSort();
 
         //  Reservation dog = new Reservation(4, 8.00, 1,"jessie", 345 );
         //  dog.print();
@@ -36,28 +39,80 @@ public class ReservationSystem {
             if (reservations[x] == null) {
                 System.out.println("empty");
                 reservations[x] = chair;
-                reservations(x).println();
+                reservations[x].print();
                 break;
 
             }
 
-        }
-        public void displayReservation() {
-            Reservation display = new Reservation(tNumpeople, tTime, tPriority, tName, tTimemade);
-        }
-        System.out.println(reservations[2]);
-        for (int y = 0; y < reservations.length; y++) {
-        if (reservations[y] == null) {
-            System.out.println("none");
-            reservations[y] = display;
-            reservations(y).println();
-            break;
 
         }
-    }
-}
 
     }
+
+    public void displayReservation() {
+        // Reservation display = new Reservation(tNumpeople, tTime, tPriority, tName, tTimemade);
+        for (int x = 0; x < reservations.length; x++) {
+            if (reservations[x] == null) {
+                System.out.println("empty");
+
+
+            } else {
+                reservations[x].print();
+            }
+        }
+
+    }
+
+
+    public void selectionSort() {
+        int[] waffles = new int[10];
+
+        for (int i = 0; i < waffles.length; i++) {
+            waffles[i] = (int) (Math.random() * 100);
+            System.out.print(waffles[i] + ",");
+        }
+        System.out.println();
+
+        //start of selection sort
+        int n = waffles.length;
+
+        for (int k = 0; k < n - 1; k++) {
+
+            //find the min
+            int minIndex = k;
+            for (int v = k + 1; v < n; v++) {
+                if (waffles[v] < waffles[minIndex]) {
+                    minIndex = v;
+
+                }
+
+            }
+            //swap indexes
+            int temp = waffles[minIndex];
+            waffles[minIndex] = waffles[k];
+            waffles[k] = temp;
+
+
+        }
+        for (int i = 0; i < waffles.length; i++) {
+            System.out.print(waffles[i] + ",");
+        }
+        System.out.println();
+
+    }
+    public void sortReservationsByPriority() {
+        for (int i = 0; i < numReservation - 1; i++) {
+            int minIndex = i;
+
+            for (int j = i + 1; j < numReservation; j++) {
+                if (reservations[j].getPriority() < reservations[minIndex].getPriority()) {
+                    minIndex = j;
+                }
+            }
+
+}}}
+
+
 
 
 
