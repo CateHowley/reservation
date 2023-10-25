@@ -100,17 +100,25 @@ public class ReservationSystem {
         System.out.println();
 
     }
-    public void sortReservationsByPriority() {
-        for (int i = 0; i < numReservation - 1; i++) {
-            int minIndex = i;
 
-            for (int j = i + 1; j < numReservation; j++) {
-                if (reservations[j].getPriority() < reservations[minIndex].getPriority()) {
-                    minIndex = j;
-                }
-            }
+    public void sortReservations() {
+        Reservation filler = new Reservation(0, 0, 0, 0,0);
+        for (int i = 0; i < reservations.length - 1; i++) {
+            if (reservations[i].priority > reservations[i + 1].priority)
+                filler = reservations[i + 1];
+        }
+    }
+}
 
-}}}
+
+
+           for (int i=0; i< reservations.length; i++){
+              if(reservations[i] != null){
+        reservations[i].priority=i;
+
+
+
+          public void selectionSort(){.....}
 
 
 
