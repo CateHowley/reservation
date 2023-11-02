@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ReservationSystem {
 
     Reservation[] reservations = new Reservation[10];
@@ -11,6 +13,47 @@ public class ReservationSystem {
         //  Reservation gavin = new Reservation( 1, 4.00, 2, "jessie", 645);
         //  gavin.toString();
         selectionSort();
+        addReservation(5, 5.30, 3, "cate", 830000);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("what is your name?");
+        String name = scan.nextLine();
+        System.out.println("hello" + name + "!");
+        System.out.println("hello" + name + "what can I help you with?");
+        System.out.println("press 1 for a number of people; press 2 for time, press 3 for priority, press 4 for name of reservation, press 5 for time made");
+        String choice = scan.nextLine();
+        if (choice.equals("1")) {
+            System.out.println("how many people do you have in your party?");
+            String party = scan.nextLine();
+            if (party.equals("1")) {
+                System.out.println("what time is the reservation");
+
+
+
+            //what time
+
+            //call add res method
+            //if (party.equals(numPeople)) {
+               // System.out.println("a reservation has been made for" + name + "at" + Numpeople "what time will your reservation be for?");
+
+          //  }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //  Reservation dog = new Reservation(4, 8.00, 1,"jessie", 345 );
         //  dog.print();
@@ -102,23 +145,40 @@ public class ReservationSystem {
     }
 
     public void sortReservations() {
-        Reservation filler = new Reservation(0, 0, 0, 0,0);
+        Reservation filler = new Reservation(0, 0, 0, "cate", 0);
         for (int i = 0; i < reservations.length - 1; i++) {
             if (reservations[i].priority > reservations[i + 1].priority)
                 filler = reservations[i + 1];
         }
     }
+
+
+
+
+
 }
 
 
 
-           for (int i=0; i< reservations.length; i++){
-              if(reservations[i] != null){
-        reservations[i].priority=i;
+
+
+//      //     for (int i=0; i < reservations.length; i++){
+//           }
+//         //    if(reservations[i]!=null){
+//        reservations[i].priority=i;
+//
+//
+//public class void selectionSort()
+//
+//
+//        Reservation[]reservations=new Reservations
+//
+//
+//        }
 
 
 
-          public void selectionSort(){.....}
+
 
 
 

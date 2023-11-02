@@ -18,7 +18,7 @@ public class Reservation {
         name = tName;
         priority = tPriority;
         tableNumber = tTimemade;
-        numReservations= tReservations;
+   //     numReservations= tReservations;
 
     }
 
