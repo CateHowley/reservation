@@ -35,44 +35,54 @@ public class ReservationSystem {
         String name = scan.nextLine();
         String name2;
         System.out.println("hello " + name + "What can I help you with?");
-        while (true)
-        {
-            {
+        //
+//        while (true)
+//        {
+//
+//
+//        }
 
-        }
-
-        System.out.println("press 1 for reservation slots; press 2 to add a reservation, press 3 for priority, press 4 for name of reservation, press 5 for time made");
+        System.out.println("press 1 for reservation slots; press 2 to add a reservation, press 3 for where you are in line, press 4 for name of reservation, press 5 for time made");
         String number = scan.nextLine();
         if (number.equals("1")) {
             System.out.println("View reservations");
             displayReservation();
         }
-        if (number.equals("2"))
+        if (number.equals("2")) {
             System.out.println("what time do you want your reservation for?");
-        String time = scan.nextLine();
-        System.out.println("for how many people?");
-        String amount = scan.nextLine();
-        System.out.println("would you like to change the name of the reservation?");
-        String change = scan.nextLine();
+            String time = scan.nextLine();
+            System.out.println("for how many people?");
+            String amount = scan.nextLine();
+            System.out.println("would you like to change the name of the reservation?");
+            String change = scan.nextLine();
 
-        if (change.equals("yes ")) {
-            System.out.println("what would you like to name your reservation to?");
-            name2 = scan.nextLine();
-            name = name2;
+            if (change.equals("yes")) {
+                System.out.println("what would you like to name your reservation to?");
+
+                name2 = scan.nextLine();
+                name = name2;
+            }
+            if (change.equals("no")) {
+                System.out.println(" perfect," + name + "!");
+            }
+            //TODO: call addReservation method
+            //example: addReservation(3, 3.2, 4, "cate", 4000000);
+            //3 would be amount
+
         }
-        if (change.equals("no ")) {
-            System.out.println(" perfect," + name + "!");
-
-            if (number.equals("3"))
-                System.out.println("you are currently 3rd in line!");
+        if (number.equals("3")) { //stuff to do when finished with basic requirments
+            System.out.println("you are currently 3rd in line!");
             String priority = scan.nextLine();
-
         }
+        //TODO: have a menu choice for sort
+        //TODO: have an if for short method
+        //TODO: use our sort method we think works
+
+
         System.out.println("thank you for making a reservation at Cate's restaurant!");
-    }
 
 
-            //  Reservation dog = new Reservation(4, 8.00, 1,"jessie", 345 );
+        //  Reservation dog = new Reservation(4, 8.00, 1,"jessie", 345 );
         //  dog.print();
 
         // Reservation [] reservations = new Reservation [10];
@@ -122,6 +132,7 @@ public class ReservationSystem {
         }
 
     }
+
     public void selectionSort() {
         //    int[] waffles = new int[10];
 
@@ -132,19 +143,17 @@ public class ReservationSystem {
         //   System.out.println();
 
 
-
-
         //start of selection sort
         int n = reservations.length;
-        Reservation filler = new Reservation(0,0,0,"0",0 );
+        Reservation filler = new Reservation(0, 0, 0, "0", 0);
         for (int k = 0; k < n - 1; k++) {
             int minIndex = k;
             //find the min
 
             for (int v = k + 1; v < n; v++) {
-                if (reservations[v]!=null){
+                if (reservations[v] != null) {
                     if (reservations[v].priority < reservations[minIndex].priority) {
-                        minIndex=v;
+                        minIndex = v;
                     }
 
 
@@ -152,24 +161,18 @@ public class ReservationSystem {
 
             }
             //swap indexes
-         filler = reservations[minIndex];
+            filler = reservations[minIndex];
             reservations[minIndex] = reservations[k];
-            reservations[k]=filler;
+            reservations[k] = filler;
 
         }
 
-        for (int i = 0; i < reservations.length; i++){
+        for (int i = 0; i < reservations.length; i++) {
             System.out.println(reservations[i] + ",");
         }
         displayReservation();
 
     }
-
-
-
-
-
-
 
 
     public void sortReservations() {
@@ -181,13 +184,7 @@ public class ReservationSystem {
     }
 
 
-
-
-
 }
-
-
-
 
 
 //      //     for (int i=0; i < reservations.length; i++){
