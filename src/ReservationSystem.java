@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class ReservationSystem {
 
+
+
+
     Reservation[] reservations = new Reservation[10];
 
     public static void main(String[] args) {
